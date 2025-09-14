@@ -29,3 +29,20 @@ ContainerLab был установлен следующей командой:
 Командой `clab deploy -t lab1.clab.yaml` был произведён деплой.
 
 <img src="images/topology-1.png" width=500px>
+
+А командой `clab graph -t lab1.clab.yaml` был построен граф топологии.
+
+<img src="images/graph-1.png" width=500px>
+
+# Добавление сети управления
+
+Чтобы можно было управлять устройствами, нужно создать сеть. В ContainerLab прописывается "mgmt" (management), которому задаётся имя сети и диапазон айпи-адресов. Затем всем устройствам прописывается их айпи в этой сети.
+
+<img src="images/yaml-2.png" width=500px>
+
+По заданию компьютерам должны раздаваться адреса через DHCP, но на этом шаге они пока побудут с айпи введёнными вручную.
+
+Командой `clab redeploy -t lab1.clab.yaml` был произведён редеплой.
+
+<img src="images/topology-2.png" width=500px>
+

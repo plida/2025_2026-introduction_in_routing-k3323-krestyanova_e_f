@@ -1,5 +1,9 @@
 name: lab1
 
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.32.32.0/24
+
 topology:
   kinds:
     vr-ros:
@@ -8,18 +12,24 @@ topology:
   nodes:
     R01.TEST:
       kind: vr-ros
+      mgmt-ipv4: 172.32.32.100
     SW01.L3.01.TEST:
       kind: vr-ros
+      mgmt-ipv4: 172.32.32.101
     SW02.L3.01.TEST:
       kind: vr-ros
+      mgmt-ipv4: 172.32.32.102
     SW02.L3.02.TEST:
       kind: vr-ros 
+      mgmt-ipv4: 172.32.32.103
     PC1:
       kind: linux
       image: ubuntu:latest
+      mgmt-ipv4: 172.32.32.2
     PC2:
       kind: linux
       image: alpine:latest
+      mgmt-ipv4: 172.32.32.3
     
   links:
     - endpoints: ["R01.TEST:eth1", "SW01.L3.01.TEST:eth1"]
