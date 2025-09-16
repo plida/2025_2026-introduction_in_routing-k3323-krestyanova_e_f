@@ -19,7 +19,7 @@ topology:
       startup-config: config/r01-frt.rsc
     R01.MSK:
       kind: vr-ros
-      mgmt-ipv4: 172.16.192.102
+      mgmt-ipv4: 172.16.192.101
       startup-config: config/r01-msk.rsc
     PC1:
       kind: linux
