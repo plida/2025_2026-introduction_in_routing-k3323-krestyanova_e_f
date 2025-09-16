@@ -52,7 +52,7 @@ ContainerLab был установлен следующей командой:
 
 <img src="images/ssh-into-router.png" width=500px>
 
-А в компьютеры можно зайти командой `docker exec -t <имя нода> sh`.
+А в компьютеры можно зайти командой `docker exec -it <имя нода> sh`.
 
 # Конфиги 
 
