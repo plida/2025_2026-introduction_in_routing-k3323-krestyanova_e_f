@@ -1,48 +1,48 @@
 name: lab2
 mgmt:
   network: custom_mgmt
-  ipv4-subnet: 172.16.16.0/24
+  ipv4-subnet: 172.32.32.0/24
 
 topology:
   kinds:
     vr-ros:
-      image: vrnetlab/mikrotik_routeros:6.47.9
+      image: vrmetlab/mikrotik_routeros:6.47.9
 
   nodes:
     R01.BRL:
       kind: vr-ros
-      mgmt-ipv4: 172.16.16.101
+      mgmt-ipv4: 172.32.32.101
       startup-config: config/r01-brl.rsc
     R01.FRT:
       kind: vr-ros
-      mgmt-ipv4: 172.16.16.102
+      mgmt-ipv4: 172.32.32.102
       startup-config: config/r01-frt.rsc
     R01.MSK:
       kind: vr-ros
-      mgmt-ipv4: 172.16.16.103
+      mgmt-ipv4: 172.32.32.103
       startup-config: config/r01-msk.rsc
     PC1:
       kind: linux
       image: alpine:latest
-      mgmt-ipv4: 172.16.16.2
+      mgmt-ipv4: 172.32.32.2
       binds:
-        - ./config:/config
+        - .config:/config
       exec:
         - sh /config/pc1.sh
     PC2:
       kind: linux
       image: alpine:latest
-      mgmt-ipv4: 172.16.16.3
+      mgmt-ipv4: 172.32.32.3
       binds:
-        - ./config:/config
+        - .config:/config
       exec:
         - sh /config/pc2.sh
     PC3:
       kind: linux
       image: alpine:latest
-      mgmt-ipv4: 172.16.16.4
+      mgmt-ipv4: 172.32.32.4
       binds:
-        - ./config:/config
+        - .config:/config
       exec:
         - sh /config/pc3.sh
 
