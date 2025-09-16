@@ -1,4 +1,6 @@
 /ip address
+add address=10.1.0.2/30 interface=ether3
+add address=10.2.0.1/30 interface=ether2
 add address=172.16.64.1/18 interface=ether4
 /ip pool
 add name=dhcp-pool ranges=172.16.64.2-172.16.127.254
