@@ -10,9 +10,11 @@ add bridge=bridge1 interface=ether4
 /interface bridge vlan
 add bridge=bridge1 tagged=bridge1,ether2,ether3 vlan-ids=10
 add bridge=bridge1 tagged=bridge1,ether2,ether4 vlan-ids=20
-/ip dhcp-client
-add disabled=no interface=vlan10
+/ip address
+add address=10.10.0.2/24 interface=vlan10
+add address=10.20.0.2/24 interface=vlan20
 /user
 add name=plida password=letmein group=full
+remove admin
 /system identity
 set name=SW01

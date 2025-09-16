@@ -5,8 +5,8 @@ add name=vlan20 vlan-id=20 interface=ether2
 add address=10.10.0.1/24 interface=vlan10
 add address=10.20.0.1/24 interface=vlan20
 /ip pool
-add name=dhcp-pool10 ranges=10.10.0.2-10.10.0.254
-add name=dhcp-pool20 ranges=10.20.0.2-10.20.0.254
+add name=dhcp-pool10 ranges=10.10.0.10-10.10.0.254
+add name=dhcp-pool20 ranges=10.20.0.10-10.20.0.254
 /ip dhcp-server
 add address-pool=dhcp-pool10 disabled=no interface=vlan10 name=dhcp-server10
 add address-pool=dhcp-pool20 disabled=no interface=vlan20 name=dhcp-server20
@@ -15,6 +15,7 @@ add address=10.10.0.0/24 gateway=10.10.0.1
 add address=10.20.0.0/24 gateway=10.20.0.1
 /user
 add name=plida password=letmein group=full
+remove admin
 /system identity
 set name=R01
 
