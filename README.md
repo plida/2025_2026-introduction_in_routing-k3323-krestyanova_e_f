@@ -8,4 +8,7 @@ Group: K3323<br />
 Author: Krestyanova Elisaveta Fedorovna<br />
 
 Лабораторные работы:
-1. [Установка ContainerLab и развертывание тестовой сети связи](https://github.com/plida/2025_2026-introduction_in_routing-k3323-krestyanova_e_f/blob/main/lab1/lab1_report.md)
+1. [Установка ContainerLab и развертывание тестовой сети связи](/lab1/lab1_report.md)
+2. [Эмуляция распределенной корпоративной сети связи, настройка статической маршрутизации между филиалами](/lab2/lab2_report.md)
+3. Эмуляция распределенной корпоративной сети связи, настройка OSPF и MPLS, организация первого EoMPLS
+4. Эмуляция распределенной корпоративной сети связи, настройка iBGP, организация L3VPN, VPLS
