@@ -20,11 +20,11 @@ add address=192.168.11.0/24 gateway=192.168.11.1
 add name=inst router-id=10.255.255.6
 /routing ospf area
 add name=backbonev2 area-id=0.0.0.0 instance=inst
-
 /routing ospf network
 add area=backbonev2 network=10.20.6.0/30
 add area=backbonev2 network=10.20.7.0/30
 add area=backbonev2 network=192.168.11.0/24
-
+/interface bridge
+add name=loopback
 /ip address 
 add address=10.255.255.6/32 interface=loopback network=10.255.255.6

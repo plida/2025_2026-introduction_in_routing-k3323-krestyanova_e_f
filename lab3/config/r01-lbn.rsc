@@ -13,11 +13,11 @@ add address=10.20.7.1/30 interface=ether4
 add name=inst router-id=10.255.255.5
 /routing ospf area
 add name=backbonev2 area-id=0.0.0.0 instance=inst
-
 /routing ospf network
 add area=backbonev2 network=10.20.4.0/30
 add area=backbonev2 network=10.20.5.0/30
 add area=backbonev2 network=10.20.7.0/30
-
+/interface bridge
+add name=loopback
 /ip address 
 add address=10.255.255.5/32 interface=loopback network=10.255.255.5
