@@ -5,7 +5,7 @@ Year: 2025/2026<br />
 Group: K3323<br />
 Author: Krestyanova Elisaveta Fedorovna<br />
 Lab: Lab3<br />
-Date of create: -<br />
+Date of create: 30.09.2025<br />
 Date of finished: -<br />
 
 # Задание
