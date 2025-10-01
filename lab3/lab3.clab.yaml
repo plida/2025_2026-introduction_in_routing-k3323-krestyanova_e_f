@@ -1,4 +1,4 @@
-name: lab2
+name: lab3
 mgmt:
   network: custom_mgmt
   ipv4-subnet: 172.16.16.0/24
