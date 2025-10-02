@@ -43,3 +43,11 @@ add accept=no
 /mpls ldp interface
 add interface=ether2
 add interface=ether3
+
+/interface bridge
+add name=vpn
+/interface vpls
+add disabled=no name=SGIPC remote-peer=10.255.255.1 cisco-style=yes cisco-style-id=0
+/interface bridge port
+add interface=ether2 bridge=vpn
+add interface=SGIPC bridge=vpn
