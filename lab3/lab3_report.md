@@ -117,6 +117,10 @@ VPLS и EoMPLS это [не совсем одно и то же](https://netseccl
 <img src="images/vpls-3.png" width=500px>
 <img src="images/vpls-4.png" width=500px>
 
+## Соединение компьютеров
+
+<img src="images/ping.png" width=500px>
+
 # Заключение
 
 В ходе выполнения работы была настроена динамическая маршрутизация через osfp, поверх чего была положена сеть mpls, а также был проведён туннель vpls между роутерами NY и SPB.
