@@ -5,8 +5,15 @@ remove admin
 set name=R01.SVL
 
 /ip address
-add address=10.20.2.2/30 interface=ether2
-add address=10.20.4.1/30 interface=ether3
+add address=10.20.3.1/30 interface=ether2
+add address=192.168.12.1/24 interface=ether3
+
+/ip pool
+add name=dhcp-pool ranges=192.168.12.10-192.168.12.100
+/ip dhcp-server
+add address-pool=dhcp-pool disabled=no interface=ether3 name=dhcp-server
+/ip dhcp-server network
+add address=192.168.12.0/24 gateway=192.168.12.1
 
 /interface bridge
 add name=loopback
@@ -18,8 +25,8 @@ add name=inst router-id=10.255.255.3
 /routing ospf area
 add name=backbonev2 area-id=0.0.0.0 instance=inst
 /routing ospf network
-add area=backbonev2 network=10.20.2.0/30
-add area=backbonev2 network=10.20.4.0/30
+add area=backbonev2 network=10.20.3.0/30
+add area=backbonev2 network=192.168.12.0/24
 add area=backbonev2 network=10.255.255.3/32
 
 /mpls ldp
@@ -33,4 +40,3 @@ add prefix=10.255.255.0/24 accept=yes
 add accept=no
 /mpls ldp interface
 add interface=ether2
-add interface=ether3

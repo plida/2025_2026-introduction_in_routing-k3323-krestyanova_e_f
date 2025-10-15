@@ -5,9 +5,9 @@ remove admin
 set name=R01.LBN
 
 /ip address
-add address=10.20.4.2/30 interface=ether2
-add address=10.20.5.2/30 interface=ether3
-add address=10.20.7.1/30 interface=ether4
+add address=10.20.3.2/30 interface=ether2
+add address=10.20.12.1/30 interface=ether3
+add address=10.20.13.2/30 interface=ether4
 
 /interface bridge
 add name=loopback
@@ -19,9 +19,9 @@ add name=inst router-id=10.255.255.5
 /routing ospf area
 add name=backbonev2 area-id=0.0.0.0 instance=inst
 /routing ospf network
-add area=backbonev2 network=10.20.4.0/30
-add area=backbonev2 network=10.20.5.0/30
-add area=backbonev2 network=10.20.7.0/30
+add area=backbonev2 network=10.20.12.0/30
+add area=backbonev2 network=10.20.13.0/30
+add area=backbonev2 network=10.20.3.0/30
 add area=backbonev2 network=10.255.255.5/32
 
 /mpls ldp
