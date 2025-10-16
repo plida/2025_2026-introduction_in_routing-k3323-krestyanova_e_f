@@ -12,7 +12,7 @@ Date of finished: -<br />
 
 Вам необходимо сделать IP/MPLS сеть связи для "RogaIKopita Games" изображенную на рисунке 1 в ContainerLab. Необходимо создать все устройства указанные на схеме и соединения между ними.
 
-<img src="images/task.png" width=500px>
+<img src="images/task.png" width=600px>
 
 - Помимо этого вам необходимо настроить IP адреса на интерфейсах.
 - Настроить OSPF и MPLS.
@@ -38,11 +38,11 @@ Date of finished: -<br />
 
 Схема, построенная в draw.io:
 
-<img src="images/graph-1.png" width=500px>
+<img src="images/graph-1.png" width=600px>
 
 Схема, построенная ContainerLab:
 
-<img src="images/graph-2.png" width=500px>
+<img src="images/graph-2.png" width=600px>
 
 
 # Конфиг yaml
@@ -60,7 +60,7 @@ Date of finished: -<br />
 Настройка OSPF + MPLS берётся из предыдущей работы с небольшими изменениями портов и подключённых сетей в соответствии с изменённой схемой сети.
 
 ### iBGP c Route Reflector кластером
-
+ 
 1. Выбираем ASN
 
 AS — система сетей под управлением единственной административной зоны. У нас только 1 такая зона, поэтому выбираем 1 приватное (64512-65534) число, например 65000.
@@ -69,9 +69,9 @@ AS — система сетей под управлением единстве�
 
 Мы работаем в рамках 1 зоны, поэтому мы используем протокол iBGP. Т.е. в конфигах мы будем указывать номер зоны конфигурируемого роутера как 65000, и в пирах/соседях тоже будет номер зоны 65000.
 
-
-
-/routing bgp network нужен для eBGP. У нас только 1 зона, это нам не нужно.
+- `/routing bgp instance` (set default, номер AS и айди роутера. Здесь снова пользуемся айди таким же, что и у loopback. Cluster-id для наших RR роутеров в центре)
+- `/routing bgp peer` (remote-address, remote-as, route-reflect между RR роутерами)
+- `/routing bgp network` (свой loopback адрес)
 
 ## Компьютеры
 
@@ -83,23 +83,36 @@ AS — система сетей под управлением единстве�
 
 Проверяем динамическую маршрутизацию... через таблицы маршрутизации!
 
-<img src="images/ospf-1.png" width=500px>
-<img src="images/ospf-2.png" width=500px>
-<img src="images/ospf-3.png" width=500px>
-<img src="images/ospf-4.png" width=500px>
-<img src="images/ospf-5.png" width=500px>
-<img src="images/ospf-6.png" width=500px>
+<img src="images/ospf-1.png" width=600px>
+<img src="images/ospf-2.png" width=600px>
+<img src="images/ospf-3.png" width=600px>
+<img src="images/ospf-4.png" width=600px>
+<img src="images/ospf-5.png" width=600px>
+<img src="images/ospf-6.png" width=600px>
 
 Как можно заметить, нигде статические маршруты не были прописаны, всё настроено динамически.
 
 ## 2: MPLS
 
-<img src="images/mpls-1.png" width=500px>
-<img src="images/mpls-2.png" width=500px>
-<img src="images/mpls-3.png" width=500px>
-<img src="images/mpls-4.png" width=500px>
-<img src="images/mpls-5.png" width=500px>
-<img src="images/mpls-6.png" width=500px>
+<img src="images/mpls-1.png" width=600px>
+<img src="images/mpls-2.png" width=600px>
+<img src="images/mpls-3.png" width=600px>
+<img src="images/mpls-4.png" width=600px>
+<img src="images/mpls-5.png" width=600px>
+<img src="images/mpls-6.png" width=600px>
+
+## 3: iBGP
+
+В `ip route print where bgp` показана метрика 200, когда как у ospf метрики были 110, то есть ospf будет в приоритете.
+
+В `routing bgp peer print status` можно заметить флаг E - established. По нему можно увидеть, что все конфиги были настроены без ошибок.
+
+<img src="images/ibgp-1.png" width=600px>
+<img src="images/ibgp-2.png" width=600px>
+<img src="images/ibgp-3.png" width=600px>
+<img src="images/ibgp-4.png" width=600px>
+<img src="images/ibgp-5.png" width=600px>
+<img src="images/ibgp-6.png" width=600px>
 
 # Заключение
 
