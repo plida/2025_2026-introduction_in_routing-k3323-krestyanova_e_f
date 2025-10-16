@@ -42,6 +42,8 @@ add accept=no
 add interface=ether2
 
 /routing bgp instance
-add name=default as=65000 router-id=10.255.255.6
+set default as=65000 router-id=10.255.255.6
 /routing bgp peer
-add name=peerLND remote-address=10.20.2.2 remote-as=65000 route-reflect=no
+add name=peerLND remote-address=10.255.255.4 remote-as=65000 route-reflect=no update-source=loopback
+/routing bgp network
+add network=10.255.255.6/32
