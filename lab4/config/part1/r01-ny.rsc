@@ -32,12 +32,6 @@ add area=backbonev2 network=10.255.255.6/32
 /mpls ldp
 set lsr-id=10.255.255.6
 set enabled=yes transport-address=10.255.255.6
-/mpls ldp advertise-filter 
-add prefix=10.255.255.0/24 advertise=yes
-add advertise=no
-/mpls ldp accept-filter 
-add prefix=10.255.255.0/24 accept=yes
-add accept=no
 /mpls ldp interface
 add interface=ether2
 
@@ -47,8 +41,3 @@ set default as=65000 router-id=10.255.255.6
 add name=peerLND remote-address=10.255.255.4 remote-as=65000 route-reflect=no update-source=loopback
 /routing bgp network
 add network=10.255.255.6/32
-
-/ip route vrf
-add routing-mark=VRF_DEVOPS interface=ether2 
-/routing bgp instance vrf 
-add routing-mark=VRF_DEVOPS 

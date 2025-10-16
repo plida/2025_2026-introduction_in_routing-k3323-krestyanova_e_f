@@ -124,8 +124,12 @@ AS — система сетей под управлением единстве�
 
 # Источники
 
-1. BGP on a mikrotik a complete configuration: https://tech.layer-x.com/bgp-on-mikrotik-a-complete-configuration-guide/
+1. BGP on a Mikrotik a complete configuration: https://tech.layer-x.com/bgp-on-mikrotik-a-complete-configuration-guide/
+
+2. BGP на Mikrotik: https://www.cloudhosting.lv/rus/faq/BGP-na-Mikrotik 
 
 2. Route Reflector: https://linkmeup.gitbook.io/sdsm/8.1.-ibgp/2.-problema-n-kvadrat/0.-route-reflector
 
 3. Mikrotik VTF+NAT: https://habr.com/ru/articles/262091/
+
+4. Разница между Route Distinguisher и Route Target: https://habr.com/ru/sandbox/99255/
