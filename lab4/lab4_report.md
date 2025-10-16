@@ -114,6 +114,12 @@ AS — система сетей под управлением единстве�
 <img src="images/ibgp-5.png" width=600px>
 <img src="images/ibgp-6.png" width=600px>
 
+## 4: VRF
+
+<img src="images/vrf-1.png" width=600px>
+<img src="images/vrf-2.png" width=600px>
+<img src="images/vrf-3.png" width=600px>
+
 # Заключение
 
 # Источники
@@ -121,3 +127,5 @@ AS — система сетей под управлением единстве�
 1. BGP on a mikrotik a complete configuration: https://tech.layer-x.com/bgp-on-mikrotik-a-complete-configuration-guide/
 
 2. Route Reflector: https://linkmeup.gitbook.io/sdsm/8.1.-ibgp/2.-problema-n-kvadrat/0.-route-reflector
+
+3. Mikrotik VTF+NAT: https://habr.com/ru/articles/262091/

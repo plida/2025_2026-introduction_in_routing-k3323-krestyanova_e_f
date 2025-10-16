@@ -47,3 +47,8 @@ set default as=65000 router-id=10.255.255.1
 add name=peerHKI remote-address=10.255.255.2 remote-as=65000 route-reflect=no update-source=loopback
 /routing bgp network
 add network=10.255.255.1/32
+
+/ip route vrf
+add routing-mark=VRF_DEVOPS interface=ether2 
+/routing bgp instance vrf 
+add routing-mark=VRF_DEVOPS 
