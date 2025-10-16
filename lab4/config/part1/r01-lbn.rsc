@@ -37,3 +37,10 @@ add accept=no
 add interface=ether2
 add interface=ether3
 add interface=ether4
+
+/routing bgp instance
+add name=default as=65000 router-id=10.255.255.5 cluster-id=1
+/routing bgp peer
+add name=peerSVL remote-address=10.20.3.1 remote-as=65000 route-reflect=no
+add name=peerHKI remote-address=10.20.12.2 remote-as=65000 route-reflect=yes
+add name=peerLND remote-address=10.20.13.1 remote-as=65000 route-reflect=yes
