@@ -38,6 +38,15 @@ add interface=ether2
 /routing bgp instance
 set default as=65000 router-id=10.255.255.3
 /routing bgp peer
-add name=peerLBN remote-address=10.255.255.5 remote-as=65000 route-reflect=no update-source=loopback
+add name=peerLBN remote-address=10.255.255.5 address-families=l2vpn,vpnv4 remote-as=65000 update-source=loopback route-reflect=yes
 /routing bgp network
-add network=10.255.255.3/32
+add network=10.255.255.0/24
+
+/interface bridge 
+add name=br100
+/ip address
+add address=10.100.1.3/32 interface=br100
+/ip route vrf
+add export-route-targets=65000:100 import-route-targets=65000:100 interfaces=br100 route-distinguisher=65000:100 routing-mark=vrf1
+/routing bgp instance vrf
+add redistribute-connected=yes routing-mark=vrf1
