@@ -39,13 +39,10 @@ add interface=ether3
 add interface=ether4
 
 /routing bgp instance
-set default as=65000 router-id=10.255.255.5 cluster-id=1.1.1.1
+set default as=65000 router-id=10.255.255.5
 /routing bgp peer
 add name=peerSVL remote-address=10.255.255.3 address-families=l2vpn,vpnv4 remote-as=65000 update-source=loopback route-reflect=no
 add name=peerHKI remote-address=10.255.255.2 address-families=l2vpn,vpnv4 remote-as=65000 update-source=loopback route-reflect=yes
 add name=peerLND remote-address=10.255.255.4 address-families=l2vpn,vpnv4 remote-as=65000 update-source=loopback route-reflect=yes
 /routing bgp network
 add network=10.255.255.0/24
-
-/routing bgp instance vrf
-add redistribute-connected=yes routing-mark=vrf1
