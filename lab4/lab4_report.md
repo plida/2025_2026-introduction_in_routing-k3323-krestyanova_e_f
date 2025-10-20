@@ -6,7 +6,7 @@ Group: K3323<br />
 Author: Krestyanova Elisaveta Fedorovna<br />
 Lab: Lab4<br />
 Date of create: 13.10.2025<br />
-Date of finished: -<br />
+Date of finished: 20.10.2025<br />
 
 # Задание
 
